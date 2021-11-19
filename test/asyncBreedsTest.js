@@ -11,4 +11,11 @@ describe('#breedDetailsFromFile', () => {
             assert.equal(expectedDesc, input);
         });
       });
+
+      it('provides, via callback, undefined for a breed that does not exist', () => {
+        breedDetailsFromFile('Saphire', (input) => {
+          assert.equal(undefined, input); 
+        });      
+      });
+
 });
